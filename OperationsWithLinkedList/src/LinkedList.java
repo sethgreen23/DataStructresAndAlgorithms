@@ -18,7 +18,9 @@ public class LinkedList {
 	public String toString() {
 		String str = "{"+start.data;
 		Node p = start;
+		//we continue while the current node is different then null (end of linked list)
 		while(p!=null) {
+			//if p is on start we skip it
 			if(p==start) {
 				p=p.next;
 				continue;
@@ -30,26 +32,21 @@ public class LinkedList {
 		return str;
 	}
 	
-	public void print() {
-		Node p= start;
-		while(p.next!=null) {
-			System.out.println(p.data+",");
-			p=p.next;
-		}
-		
-		System.out.println("STart next data "+start.next.data);
-	}
+
 
 	private Node insert(int x) {
+		//if start next node is null or the data of the start node is >= then the value we want to insert
 		if(start==null || start.data>=x) {
 			start = new Node(x,start);
 			return start;
 		}
-		
+		//otherwise
 		Node p= start;
+		//we loop on the list till we catch a node where its next node is null (end of list) or its data is >= to the value we want to insert
 		while(p.next!=null && p.next.data<x) {
 			p=p.next;
 		}
+		//on that moment we attribute the next node of the current element to the node created and we attribute the the next node to the one created
 		p.next=new Node(x,p.next);
 		return start;
 	}
