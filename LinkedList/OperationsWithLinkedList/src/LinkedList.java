@@ -50,8 +50,26 @@ public class LinkedList {
 		p.next=new Node(x,p.next);
 		return start;
 	}
-
-
+	
+	public int size() {
+		Node p = start;
+		int size=0;
+		while(p!=null) {
+			size++;
+			p=p.next;
+		}
+		return size;
+	}
+	
+	public int sum() {
+		Node p=start;
+		int sum=0;
+		while(p!=null) {
+			sum+=p.data;
+			p=p.next;
+		}
+		return sum;
+	}
 
 	static class Node{
 		int data;
