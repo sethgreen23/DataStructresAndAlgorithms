@@ -54,6 +54,7 @@ public class LinkedList {
 	public int size() {
 		Node p = start;
 		int size=0;
+		//loop throw the list and count each node to get the size of the list
 		while(p!=null) {
 			size++;
 			p=p.next;
@@ -61,6 +62,8 @@ public class LinkedList {
 		return size;
 	}
 	
+	//loop throw each nodes till you get to the last one which is null and save 
+	//the value of each one in them in the sum variable
 	public int sum() {
 		Node p=start;
 		int sum=0;
