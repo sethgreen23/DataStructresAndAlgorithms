@@ -7,14 +7,30 @@ public class LinkedList {
 	}
 	
 	
+	//removeLast
+	public void removeLast() {
+		//iterate throw the list and when we reach p where its p.next = null
+		if(start==null | start.next==null) {
+			throw new  IllegalStateException("List need to contain at least two nodes!!");
+		}
+		Node p = start;
+		
+		while(p.next.next!=null) {
+			p=p.next;
+		}
+		p.next=null;
+		System.out.println(this.toString());
+	}
 	
+	//create list from array
 	private void createLinkedList(int[] input) {
 		for(int i=0;i<input.length;i++) {
 			start=insert(input[i]);
 		}
 		
 	}
-
+	
+	//toString method
 	public String toString() {
 		String str = "{"+start.data;
 		Node p = start;
@@ -33,7 +49,7 @@ public class LinkedList {
 	}
 	
 
-
+	//insert method
 	private Node insert(int x) {
 		//if start next node is null or the data of the start node is >= then the value we want to insert
 		if(start==null || start.data>=x) {
@@ -51,6 +67,7 @@ public class LinkedList {
 		return start;
 	}
 	
+	//size method
 	public int size() {
 		Node p = start;
 		int size=0;
@@ -73,7 +90,8 @@ public class LinkedList {
 		}
 		return sum;
 	}
-
+	
+	//static class node
 	static class Node{
 		int data;
 		Node next;
