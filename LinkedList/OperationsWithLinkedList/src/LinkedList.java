@@ -5,8 +5,33 @@ public class LinkedList {
 	public LinkedList(int[] input) {
 		createLinkedList( input);
 	}
+	public LinkedList() {
 	
+	}
+	//copy List
+	public  LinkedList copy() {
+		int[] arr = listToArray(this);
+		return create(arr);
+	}
+	private  LinkedList create(int[] input) {
+		LinkedList l=new LinkedList(input);
+		return l;
+	}
 	
+	public int[] listToArray(LinkedList l) {
+		Node p =start;
+		int[] arr = new int[l.size()];
+		if(l.start == null || l.start.next==null) {
+			throw new IllegalStateException();
+		}
+		int i=0;
+		while(p!=null) {
+			arr[i++]=p.data;
+			p=p.next;
+		}
+		
+		return arr;
+	}
 	//removeLast
 	public void removeLast() {
 		//iterate throw the list and when we reach p where its p.next = null
@@ -29,6 +54,7 @@ public class LinkedList {
 		}
 		
 	}
+
 	
 	//toString method
 	public String toString() {

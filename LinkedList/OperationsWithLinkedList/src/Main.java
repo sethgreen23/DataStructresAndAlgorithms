@@ -7,7 +7,13 @@ public class Main {
 		System.out.println(l);
 //		System.out.println(l.size());
 //		System.out.println(l.sum());
+		//l.removeLast();
+		LinkedList l1=l.copy();
+		
+		System.out.println("operation of removing last element on l list");
 		l.removeLast();
+		System.out.println("Print the l1 list that i didnt do anything to it");
+		System.out.println(l1);
 	}
 
 }
