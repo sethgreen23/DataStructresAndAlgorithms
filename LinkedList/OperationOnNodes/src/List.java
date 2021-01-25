@@ -4,11 +4,34 @@ public class List {
 	public static void main(String[] args) {
 		Node start=null ;
 		start = createList(start,new int[]{25,19,6,3,12,35,4});
+		//toString(start);
+		//System.out.println(size(start));
+		//System.out.println(sum(start));
+		//removeLast(start);
+		//toString(start);
+		Node init = copy(start);
 		toString(start);
-		System.out.println(size(start));
-		System.out.println(sum(start));
+		System.out.println("remove last element from the start list");
+		removeLast(start);
 		removeLast(start);
 		toString(start);
+		System.out.println("Print out the elements of the init list");
+		toString(init);
+	}
+	
+	public static Node copy(Node start) {
+		//make sure the list doesnt contain 1 or 0 elements
+		if(start==null || start.next==null) {
+			throw new IllegalStateException("List has to contain at least two nodes");
+		}
+		Node init = new Node(start.data);
+		// here we put p.next!=null it means we need to make sure that the next element of the current element is not null
+		//like that we dont have to write on its next element of the newely created one
+		for(Node p = start,q=init;p.next!=null;p=p.next,q=q.next) {
+			q.next=new Node(p.next.data);
+		}
+		
+		return init;
 	}
 	
 	public static Node removeLast(Node start) {
@@ -16,6 +39,7 @@ public class List {
 			throw new IllegalStateException("List needs to have two node at least!!!");
 		}
 		
+		//we need to make sure that we stop one node before the last node
 		Node p = start;
 		while(p.next.next!=null) {
 			p=p.next;
