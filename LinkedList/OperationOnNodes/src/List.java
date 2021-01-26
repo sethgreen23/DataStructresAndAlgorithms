@@ -39,10 +39,69 @@ public class List {
 //		System.out.println("Show sublist elements");
 //		toString(init);
 		/*append function*/
+//		toString(start);
+//		toString(init);
+//		append(start,init);
+//		toString(start);
+		/*concat function*/
 		toString(start);
 		toString(init);
-		append(start,init);
+		Node newList = null;
+		newList =concat(start,init);
+		toString(newList);
+		System.out.println("remove last element from the starting list");
+		removeLast(start);
+		System.out.println("remove last element from the init list");
+		removeLast(init);
+		System.out.println("show all the list start, init and new List");
 		toString(start);
+		toString(init);
+		toString(newList);
+		/**/
+	}
+	
+//Write and test this method:
+//	void set(Node list, int i, int x)
+//	// replaces the value of element number i with x;
+//For example, if list is {22, 33, 44, 55, 66, 77, 88, 99}, then set(list, 2, 50) will change
+//list to {22, 33, 50, 55, 66, 44, 88, 99}.
+	
+	
+	
+	
+//Write and test this method:
+//	Node concat(Node list1, Node list2)
+//	// returns: a new list that contains a copy of list1, followed by
+//// a copy of list2;
+//For example, if list1 is {22, 33, 44, 55} and list2 is {66, 77, 88, 99}, then
+//concat(list1, list2) will return the new list {22, 33, 44, 55, 44, 55, 66, 77, 88}. Note
+//that the three lists should be completely independent of each other. Changing one list should
+//have no effect upon the others
+	
+	public static Node concat(Node list1, Node list2) {
+		Node p= list1;
+		//save the head of the new list
+		Node init=new Node(list1.data);
+		//create a parser for the new list
+		Node parser = init;
+		//parse the first list and create new node that contains the data of each node from the start list
+		while(p.next!=null) {
+			parser.next= new Node(p.next.data);
+			p=p.next;
+			parser=parser.next;
+		}
+		//save the head of the second node 
+		parser.next= new Node(list2.data);
+		parser=parser.next;
+		Node p1=list2;
+		//parse the second list and create new node that contains the data of each node from the start list
+		while(p1.next!=null) {
+			parser.next=new Node(p1.next.data);
+			p1=p1.next;
+			parser=parser.next;
+		}
+		//return the head of the new list
+		return init;
 	}
 	
 //Write and test this method:
