@@ -6,8 +6,8 @@ public class List {
 		Node start=null ;
 		Node init=null;
 		//start = createList(start,new int[]{25,19,6,3,12,35,4});
-		start = createList(start,new int[] {22, 33, 44, 55});
-		//init = createList(init,new int[] {66, 77, 88, 99});
+		start = createList(start,new int[] {22, 66, 88, 119});
+		init = createList(init,new int[] {44, 77, 109, 129});
 //		toString(start);
 		/*size function*/
 //		System.out.println(size(start));
@@ -76,6 +76,17 @@ public class List {
 //		System.out.println("swap the element in index 1 with element in index 3");
 //		swap1(start,1,3);
 //		toString(start);
+		/*merged funtion*/
+		toString(start);
+		toString(init);
+		Node newList=merged(start,init);
+		toString(newList);
+		System.out.println("remove last element form new list");
+		removeLast(newList);
+		System.out.println("show start , init and newlist");
+		toString(start);
+		toString(init);
+		toString(newList);
 	}
 //Write and test this method:
 //	Node merged(Node list1, Node list2)
@@ -86,7 +97,48 @@ public class List {
 //merged(list1, list2) will return the new list {22, 33, 44, 55, 66, 77, 88, 99}. Note that
 //the three lists should be completely independent of each other. Changing one list should have
 //no effect upon the others
-	
+	public static Node merged(Node start, Node init) {
+		//we start the parser for three lists
+		Node p=start;
+		Node q=init;
+		Node newList = null;
+		//we do prepare the head of the new list
+		//if the data of the start is greater then the init then the new list take the init value otherwise the start value
+		//we increment the one that we chosed for the head of the new list
+		if(p.data>q.data) {
+			newList = new Node(q.data);
+			q=q.next;
+		}else {
+			newList = new Node(p.data);
+			p=p.next;
+		}
+		//System.out.println(newList.data+" "+q.data+" "+p.data);
+		//we prepare the parser of the new list
+		Node parser = newList;
+		//while the two current parsed nodes are not empty we continue parsing
+		while(p!=null && q!=null) {
+			//we chose the min between the two value of current nodes it will be the value of the parser.next
+			//we increment the parser for the list that got the least value for the current objects
+			if(p.data>=q.data) {
+				parser.next=new Node(q.data);
+				//System.out.print(" "+q.data);
+				q=q.next;
+			}else {
+				parser.next=new Node(p.data);
+				//System.out.print(" "+p.data);
+				p=p.next;
+			}
+			//we increment the parser for the new list
+			parser=parser.next;
+		}
+		//at the end we will check the last element to add to the new list
+		if(p!=null) {
+			parser.next=new Node(p.data);
+		}else if(q!=null) {
+			parser.next=new Node(q.data);
+		}
+		return  newList;
+	}
 	
 //Write and test this method:
 //	void swap(Node list, int i, int j)
