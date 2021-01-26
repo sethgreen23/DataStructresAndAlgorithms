@@ -22,13 +22,20 @@ public class List {
 //		toString(start);
 //		System.out.println("Print out the elements of the init list");
 //		toString(init);
-		/*size function*/
+		/*sublist function*/
+		System.out.println("Show list elements");
 		toString(start);
-		Node init = sublist(start,1,5);
+		Node init = sublist1(start,1,5);
+		System.out.println("Show sublist elements");
 		toString(init);
+		System.out.println("remove last element from  sublist");
 		removeLast(init);
-		toString(start);
 		toString(init);
+		System.out.println("Show list elements");
+		toString(start);
+		System.out.println("Show sublist elements");
+		toString(init);
+		/*sublist function*/
 		
 	}
 	
@@ -39,7 +46,45 @@ public class List {
 //	// specified list, starting with node number p (starting with 0);
 //	For example, if list is {22, 33, 44, 55, 66, 77, 88, 99}, then sublist(list, 2, 7) will
 //	return the new list {44, 55, 66, 77, 88}. Note that the two lists must be completely independent of each other. Changing one list should have no effect upon the other
-	
+	//version two complicated one
+	public static Node sublist1(Node start, int p, int q) {
+		//initialize the list index variable
+		int i=0;
+		//we stop two element before the q element 
+		//because if we stop on element before we will write
+		//the object of the last element and that we dont need it here
+		q=q-1;
+		//here the traker of the origin list
+		Node nodeOne=start;
+		//here the head of the sublist 
+		Node nodeTwo=null;
+		//we keep parsing the list till we reach the starting of the sublist
+		while(i<q) {
+			//if we reached the sublist
+			if(i==p) {
+				//save the head of the sublist in nodeTwo
+				 nodeTwo=new Node(nodeOne.data);
+				 //parser of the second node
+				 Node parse=nodeTwo;
+				 //while we didnt reach the before last element
+				while(i<q) {
+					//create a new object with the data of the next node obect and give it to the next node of the sublist parser
+					parse.next = new Node(nodeOne.next.data);
+					//System.out.println(i+" "+q+" inside the second loop"+parse.next.data);
+					//increment the parsers of the list and sublist and the index
+					nodeOne=nodeOne.next;
+					parse = parse.next;
+					i++;
+				}
+			}
+			//do the parsing of the list and the traker while we didnt reach the beggining of the sublist
+			nodeOne=nodeOne.next;
+			i++;
+		}
+		
+		return nodeTwo;
+	}
+	//version one less complicated
 	public static Node sublist(Node start, int p, int q) {
 		int[] input = getElements(start,p,q);
 		Node init=null;
