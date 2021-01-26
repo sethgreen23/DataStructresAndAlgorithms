@@ -72,10 +72,13 @@ public class List {
 //list to {22, 33, 50, 55, 66, 44, 88, 99}.
 	
 	public static void set(Node list, int i, int x) {
+		//start node parser to the head of the list
 		Node p =list;
+		//parser the list till the appropriate index
 		for(int j=0;j<i;j++) {
 			p=p.next;
 		}
+		//change the data of that node on the approriate index to the desired value
 		p.data=x;
 		
 	}
