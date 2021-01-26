@@ -64,8 +64,13 @@ public class List {
 //		removeLast(start);
 //		toString(start);
 		/*get function*/
+//		toString(start);
+//		System.out.println(get(start,2));//44
+		/*put function*/
 		toString(start);
-		System.out.println(get(start,2));//44
+		start = put(start,0,11);
+		start = put(start,4,50);
+		toString(start);
 	}
 	
 //Write and test this method:
@@ -74,7 +79,24 @@ public class List {
 //For example, if list is {22, 33, 44, 55, 66, 77, 88, 99}, then put(list, 3, 50) will change
 //list to {22, 33, 44, 50, 55, 66, 44, 88, 99}. Hint: if i = 0, replace the value of the first node
 //with x, and insert a new node immediately after it that contains the previous fist value
-	
+	public static Node put(Node list, int i, int x) {
+		//if the new element need to be inserted as the first element
+		//we point the start to the newly created node and we link its next element to the start object
+		if(i==0) {
+			list= new Node(x,list);
+			return list;
+		}
+		//otherwise we parse the list till we reach the node before the needed index
+		Node parser = list;
+		for(int j=0;j<i-1;j++) {
+			parser = parser.next;
+		}
+		//we attribute the next reference of the before element to the newly created object 
+		//and the next element of the newly created element to the next element of the before element
+		//it is confusing at first but it will be clearer layer ;)
+		parser.next=new Node(x,parser.next);
+		return list;
+	}
 	
 //Write and test this method:
 //	int get(Node list, int i)
