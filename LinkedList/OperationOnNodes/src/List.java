@@ -81,11 +81,13 @@ public class List {
 //	// returns the value of element number i;
 //For example, if list is {22, 33, 44, 55, 66, 77, 88, 99}, then get(list, 2) will return 44
 	public static int get(Node list, int i) {
+		//start the parser to the head of the list
 		Node parser = list;
+		//parser the list till we reach the desired node
 		for(int j=0;j<i;j++) {
 			parser=parser.next;
 		}
-		
+		//return the data of the desired node
 		return parser.data;
 	}
 	
