@@ -7,7 +7,7 @@ public class List {
 		Node init=null;
 		//start = createList(start,new int[]{25,19,6,3,12,35,4});
 		start = createList(start,new int[] {22, 33, 44, 55});
-		init = createList(init,new int[] {66, 77, 88, 99});
+		//init = createList(init,new int[] {66, 77, 88, 99});
 //		toString(start);
 		/*size function*/
 //		System.out.println(size(start));
@@ -44,20 +44,25 @@ public class List {
 //		append(start,init);
 //		toString(start);
 		/*concat function*/
+//		toString(start);
+//		toString(init);
+//		Node newList = null;
+//		newList =concat(start,init);
+//		toString(newList);
+//		System.out.println("remove last element from the starting list");
+//		removeLast(start);
+//		System.out.println("remove last element from the init list");
+//		removeLast(init);
+//		System.out.println("show all the list start, init and new List");
+//		toString(start);
+//		toString(init);
+//		toString(newList);
+		/*set function*/
 		toString(start);
-		toString(init);
-		Node newList = null;
-		newList =concat(start,init);
-		toString(newList);
-		System.out.println("remove last element from the starting list");
+		set(start,2,50);
+		toString(start);
 		removeLast(start);
-		System.out.println("remove last element from the init list");
-		removeLast(init);
-		System.out.println("show all the list start, init and new List");
 		toString(start);
-		toString(init);
-		toString(newList);
-		/**/
 	}
 	
 //Write and test this method:
@@ -65,6 +70,15 @@ public class List {
 //	// replaces the value of element number i with x;
 //For example, if list is {22, 33, 44, 55, 66, 77, 88, 99}, then set(list, 2, 50) will change
 //list to {22, 33, 50, 55, 66, 44, 88, 99}.
+	
+	public static void set(Node list, int i, int x) {
+		Node p =list;
+		for(int j=0;j<i;j++) {
+			p=p.next;
+		}
+		p.data=x;
+		
+	}
 	
 	
 	
