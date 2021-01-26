@@ -67,10 +67,92 @@ public class List {
 //		toString(start);
 //		System.out.println(get(start,2));//44
 		/*put function*/
-		toString(start);
-		start = put(start,0,11);
-		start = put(start,4,50);
-		toString(start);
+//		toString(start);
+//		start = put(start,0,11);
+//		start = put(start,4,50);
+//		toString(start);
+		/*swap function*/
+//		toString(start);
+//		System.out.println("swap the element in index 1 with element in index 3");
+//		swap1(start,1,3);
+//		toString(start);
+	}
+//Write and test this method:
+//	Node merged(Node list1, Node list2)
+//	// precondition: list1 and list2 are both in ascending order;
+//// returns: a new list that contains all the elements of list1 and
+//// list2 in ascending order;
+//For example, if list1 is {22, 33, 55, 88} and list2 is {44, 66, 77, 99}, then
+//merged(list1, list2) will return the new list {22, 33, 44, 55, 66, 77, 88, 99}. Note that
+//the three lists should be completely independent of each other. Changing one list should have
+//no effect upon the others
+	
+	
+//Write and test this method:
+//	void swap(Node list, int i, int j)
+//	// swaps the ith element with the jth element;
+//For example, if list is {22, 33, 44, 55, 66, 77, 88, 99}, then swap(list, 2, 5) will change
+//list to {22, 33, 77, 55, 66, 44, 88, 99}
+	//my idea is little bit clumsy but it works
+	public static void swap(Node start, int a, int b) {
+		Node parser=start;
+		//create two int element to hold the values of the respective nodes
+		int one, two;
+		//go throw the list till we reach the a index
+		for(int i=0;i<a;i++) {
+			parser=parser.next;
+		}
+		//get the value in the a index
+		one = parser.data;
+		//parser the list from a index till b index
+		for(int i=a;i<b;i++) {
+			parser=parser.next;
+		}
+		//when we reach the b index we get the value inside of it
+		two = parser.data;
+		//System.out.println(one+" "+two);
+		//we swap the two values
+		int temp=one;
+		one=two;
+		two=temp;
+		//System.out.println(one+" "+two);
+		//we parser the list again till the index a 
+		parser = start;
+		for(int i=0;i<a;i++) {
+			parser=parser.next;
+		}
+		//we put the second value in the first object
+		parser.data=one;
+		//we parser the list till the b index
+		for(int i=a;i<b;i++) {
+			parser=parser.next;
+		}
+		//we put the first value in the second object
+		parser.data=two;
+		//with this method we parser the 4 times the list in a linear time then it takes 4o(n) =o(n)
+	}
+	//the author idea
+	public static void swap1(Node start, int a, int b) {
+		Node p=start;
+		Node q=start;
+		//we parse the list till the a index
+		for(int i=0;i<a;i++) {
+			if(p==null) {
+				throw new IllegalArgumentException();
+			}
+			p=p.next;
+		}
+		//we parse the list till the b index
+		for(int i=0;i<b;i++) {
+			if(q==null) {
+				throw new IllegalArgumentException();
+			}
+			q=q.next;
+		}
+		//we get the object with there respective values and we do the swap of the values
+		int pValue= p.data,qValue=q.data;
+		p.data=qValue;
+		q.data=pValue;
 	}
 	
 //Write and test this method:
