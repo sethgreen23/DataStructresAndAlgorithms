@@ -4,7 +4,10 @@ public class List {
 	
 	public static void main(String[] args) {
 		Node start=null ;
-		start = createList(start,new int[]{25,19,6,3,12,35,4});
+		Node init=null;
+		//start = createList(start,new int[]{25,19,6,3,12,35,4});
+		start = createList(start,new int[] {22, 33, 44, 55});
+		init = createList(init,new int[] {66, 77, 88, 99});
 //		toString(start);
 		/*size function*/
 //		System.out.println(size(start));
@@ -23,21 +26,47 @@ public class List {
 //		System.out.println("Print out the elements of the init list");
 //		toString(init);
 		/*sublist function*/
-		System.out.println("Show list elements");
+//		System.out.println("Show list elements");
+//		toString(start);
+//		Node init = sublist1(start,1,5);
+//		System.out.println("Show sublist elements");
+//		toString(init);
+//		System.out.println("remove last element from  sublist");
+//		removeLast(init);
+//		toString(init);
+//		System.out.println("Show list elements");
+//		toString(start);
+//		System.out.println("Show sublist elements");
+//		toString(init);
+		/*append function*/
 		toString(start);
-		Node init = sublist1(start,1,5);
-		System.out.println("Show sublist elements");
 		toString(init);
-		System.out.println("remove last element from  sublist");
-		removeLast(init);
-		toString(init);
-		System.out.println("Show list elements");
+		append(start,init);
 		toString(start);
-		System.out.println("Show sublist elements");
-		toString(init);
-		/*sublist function*/
-		
 	}
+	
+//Write and test this method:
+//	void append(Node list1, Node list2)
+//	// precondition: list1 has at least one node;
+//// postcondition: list1 has list2 appended to it;
+//For example, if list1 is {22, 33, 44, 55} and list2 is {66, 77, 88, 99}, then
+//append(list1, list2) will change list1 to {22, 33, 44, 55, 44, 55, 66, 77, 88}. Note that
+//no new nodes are created by this method.
+	public static void append(Node list1,Node list2) {
+		//if the starting node is null or just one element
+		if(list1==null || list1.next ==null) {
+			throw new IllegalStateException("Node need to have at least one Node!!");
+		}
+		//otherwise we loop till we reach the last element then
+		//on that time we attribute the next element of the last to the head of the second list
+		Node p = list1;
+		while(p.next!=null) {
+			p=p.next;
+		}
+		p.next=list2;
+	}
+	
+	
 	
 	
 //	Write and test this method:
