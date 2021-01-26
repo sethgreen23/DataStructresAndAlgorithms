@@ -58,11 +58,35 @@ public class List {
 //		toString(init);
 //		toString(newList);
 		/*set function*/
+//		toString(start);
+//		set(start,2,50);
+//		toString(start);
+//		removeLast(start);
+//		toString(start);
+		/*get function*/
 		toString(start);
-		set(start,2,50);
-		toString(start);
-		removeLast(start);
-		toString(start);
+		System.out.println(get(start,2));//44
+	}
+	
+//Write and test this method:
+//	void put(Node list, int i, int x)
+//	// inserts x as element number i;
+//For example, if list is {22, 33, 44, 55, 66, 77, 88, 99}, then put(list, 3, 50) will change
+//list to {22, 33, 44, 50, 55, 66, 44, 88, 99}. Hint: if i = 0, replace the value of the first node
+//with x, and insert a new node immediately after it that contains the previous fist value
+	
+	
+//Write and test this method:
+//	int get(Node list, int i)
+//	// returns the value of element number i;
+//For example, if list is {22, 33, 44, 55, 66, 77, 88, 99}, then get(list, 2) will return 44
+	public static int get(Node list, int i) {
+		Node parser = list;
+		for(int j=0;j<i;j++) {
+			parser=parser.next;
+		}
+		
+		return parser.data;
 	}
 	
 //Write and test this method:
