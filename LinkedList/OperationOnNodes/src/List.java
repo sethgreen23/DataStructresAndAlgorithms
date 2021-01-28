@@ -6,8 +6,8 @@ public class List {
 		Node start=null ;
 		Node init=null;
 		//start = createList(start,new int[]{25,19,6,3,12,35,4});
-		start = createList(start,new int[] {22, 66, 88, 119});
-		init = createList(init,new int[] {44, 77, 109, 129});
+		start = createList(start,new int[] {22, 33, 44, 55, 66, 77, 88, 99});
+		//init = createList(init,new int[] {44, 77, 109, 129});
 //		toString(start);
 		/*size function*/
 //		System.out.println(size(start));
@@ -77,17 +77,46 @@ public class List {
 //		swap1(start,1,3);
 //		toString(start);
 		/*merged funtion*/
+//		toString(start);
+//		toString(init);
+//		Node newList=merged(start,init);
+//		toString(newList);
+//		System.out.println("remove last element form new list");
+//		removeLast(newList);
+//		System.out.println("show start , init and newlist");
+//		toString(start);
+//		toString(init);
+//		toString(newList);
+		/*rotateLeft funtion*/
 		toString(start);
-		toString(init);
-		Node newList=merged(start,init);
-		toString(newList);
-		System.out.println("remove last element form new list");
-		removeLast(newList);
-		System.out.println("show start , init and newlist");
+		start=rotateLeft(start);
 		toString(start);
-		toString(init);
-		toString(newList);
 	}
+	
+//Write and test this method:
+//	void rotateLeft(Node list)
+//	// moves the first element of the specified list to its end;
+//For example, if list is {22, 33, 44, 55, 66, 77, 88, 99}, then rotateLeft(list) will
+//change list to {33, 44, 55, 66, 77, 88, 99, 22}. Note that no new nodes are created by this
+//method
+	
+	//my own implementation
+	public static Node rotateLeft(Node start) {
+		if(start == null || start.next==null) {
+			throw new IllegalStateException();
+		}
+		Node nodeToRotate=new Node(start.data);
+		start=start.next;
+		Node parser=start;
+		while(parser.next!=null)
+			parser=parser.next;
+		parser.next=nodeToRotate;
+		return start;
+	}
+	
+	
+	
+	
 //Write and test this method:
 //	Node merged(Node list1, Node list2)
 //	// precondition: list1 and list2 are both in ascending order;
