@@ -88,10 +88,20 @@ public class List {
 //		toString(init);
 //		toString(newList);
 		/*rotateLeft funtion*/
-		toString(start);
-		start=rotateLeft(start);
-		toString(start);
+//		toString(start);
+//		start=rotateLeft(start);
+//		toString(start);
+		/*size1 function*/
+		System.out.println(size1(start));
 	}
+	
+	//size function
+	public static int size1(Node start) {
+		if(start==null)
+			return 0;
+		return size1(start.next)+1;
+	}
+	
 	
 //Write and test this method:
 //	void rotateLeft(Node list)
