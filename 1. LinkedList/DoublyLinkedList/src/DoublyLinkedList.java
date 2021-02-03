@@ -22,6 +22,8 @@ public class DoublyLinkedList {
 		
 		l.printFromEnd();
 		l.printFromFront();
+		System.out.println("Head : "+ l.head);
+		System.out.println("Tail : "+l.tail);
 	}
 
 	//insert in front
@@ -36,31 +38,27 @@ public class DoublyLinkedList {
 		}else {
 			EmployeeNode node = new EmployeeNode(e);
 			head=node;
-			if(head.getNext()==null)
-				head.setNext(tail);
-			return;
+			head.setNext(tail);
 		}
 	}
 	
-	
+	//insert at end
 	void insertAtEnd(Employee e) {
 		if(tail!=null) {
 			EmployeeNode node = new EmployeeNode(e);
 			node.setPrev(tail);
+			tail.setNext(node);
 			if(tail.getPrev()==null)
 				tail.setPrev(head);
-			tail.setNext(node);
 			tail=node;
-			}else {
-				EmployeeNode node = new EmployeeNode(e);
-				tail=node;
-				if(tail.getPrev()==null)
-					tail.setPrev(head);
-				return;
-			}
+		}else {
+			EmployeeNode node = new EmployeeNode(e);
+			tail=node;
+			tail.setPrev(head);
 		}
+	}
 	
-	
+	//print from front
 	void printFromFront() {
 		EmployeeNode parser=head;
 		System.out.print("null -> Head :");
@@ -77,7 +75,7 @@ public class DoublyLinkedList {
 		System.out.println();
 	}
 	
-	
+	//print from end
 	void printFromEnd() {
 		EmployeeNode parser=tail;
 		System.out.print("null -> Tail: ");
