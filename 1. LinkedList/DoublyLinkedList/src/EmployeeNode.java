@@ -3,7 +3,6 @@ public class EmployeeNode {
 	private Employee employee;
 	private EmployeeNode next;
 	private EmployeeNode prev;
-	
 	public EmployeeNode(Employee employee) {
 		this.employee=employee;
 	}

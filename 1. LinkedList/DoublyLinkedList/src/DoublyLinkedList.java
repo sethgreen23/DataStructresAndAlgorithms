@@ -2,7 +2,7 @@
 public class DoublyLinkedList {
 	public EmployeeNode head;
 	public EmployeeNode tail;
-	
+	public static int size=0;
 	
 	public static void main(String[] args) {
 		DoublyLinkedList l = new DoublyLinkedList();
@@ -13,12 +13,14 @@ public class DoublyLinkedList {
 		Employee e3 = new Employee("Michael","Jordan",4);
 		Employee e4 = new Employee("Mahmoud","Abdul-Rauf",5);
 		Employee e5 = new Employee("Jusuf","Nurkic",6);
+		
 		l.insertAtEnd(e);
 		l.insertInFront(e1);
 		l.insertAtEnd(e2);
 		l.insertInFront(e3);
 		l.insertAtEnd(e4);
 		l.insertInFront(e5);
+		
 		System.out.println("Print From End: ");
 		l.printFromEnd();
 		System.out.println("Print From Front: ");
@@ -48,6 +50,8 @@ public class DoublyLinkedList {
 		//it will be more easier to the garbage collector to get rid of
 		removedNode.setNext(null);
 		removedNode.setPrev(null);
+		size--;
+		System.out.println("The size of the list: "+size);
 		return removedNode;
 	}
 	
@@ -59,6 +63,8 @@ public class DoublyLinkedList {
 		head=head.getNext();
 		removedNode.setNext(null);
 		removedNode.setPrev(null);
+		size--;
+		System.out.println("The size of the list: "+size);
 		return removedNode;
 	}
 	
@@ -86,6 +92,8 @@ public class DoublyLinkedList {
 			//set the next node of the head to tail
 			head.setNext(tail);
 		}
+		size++;
+		System.out.println("The size of the list: "+size);
 	}
 	
 	//insert at end
@@ -103,6 +111,8 @@ public class DoublyLinkedList {
 			tail=node;
 			tail.setPrev(head);
 		}
+		size++;
+		System.out.println("The size of the list: "+size);
 	}
 	
 	//print from front
