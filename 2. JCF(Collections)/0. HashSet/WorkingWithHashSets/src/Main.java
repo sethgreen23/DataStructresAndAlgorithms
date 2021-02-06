@@ -28,7 +28,7 @@ public class Main {
     }
 }
 
-// print
+//output
 /*
 isEmpty() : true
 Adding elements into the hashset:
@@ -45,3 +45,9 @@ Nations: [RUS, GB, FR, US]
 g7.removeAll(nations) (AKA complement) : [GER, JP, IT, CA], response : true
 g7.retainAll(nations) (AKA intersetion) : [], response : true
 */
+
+
+/*
+ * HashSet is not ordered list that doesnt allow duplicate values
+ * */
+ */
