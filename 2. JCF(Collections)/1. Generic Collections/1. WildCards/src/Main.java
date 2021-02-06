@@ -35,4 +35,9 @@ Queue<Date>.
 Note that if we used Collection<Object> instead of Collection<?> at line 1, then the method
 would only apply to collections whose element type is specified as Object. For example, it could not be
 used to print a HashSet<String> because that is not an extension of Collection<Object>.
+
+
+if you wanted to restrict the print() method in Example 4.5 to extensions of a Person class, then you would replace line 1 with:
+1 static void print(Collection<? extends Person> c) {
+The expression ? extends Person is called a bounded wildcard type.
  */
