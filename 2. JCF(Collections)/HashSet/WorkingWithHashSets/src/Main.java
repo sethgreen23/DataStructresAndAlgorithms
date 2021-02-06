@@ -27,3 +27,21 @@ public class Main {
 
     }
 }
+
+// print
+/*
+isEmpty() : true
+Adding elements into the hashset:
+Nations: [RUS, GB, FR, US]
+isEmpty() : false
+Size() : 4
+contains("GB") : true
+Using iterator:
+RUS, GB, FR, US
+Changing hashset to array: 
+RUS, GB, FR, US, 
+G7 nations: [GER, JP, IT, GB, FR, CA, US]
+Nations: [RUS, GB, FR, US]
+g7.removeAll(nations) (AKA complement) : [GER, JP, IT, CA], response : true
+g7.retainAll(nations) (AKA intersetion) : [], response : true
+*/
