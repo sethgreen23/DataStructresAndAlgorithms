@@ -29,3 +29,10 @@ output with integer
 output with strings
 RUS, USA, GB, FR, 
 */
+/*
+ This method can be used to print any type of collection, for example, a HashSet<String> or a
+Queue<Date>.
+Note that if we used Collection<Object> instead of Collection<?> at line 1, then the method
+would only apply to collections whose element type is specified as Object. For example, it could not be
+used to print a HashSet<String> because that is not an extension of Collection<Object>.
+ */
