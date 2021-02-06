@@ -11,3 +11,10 @@ public class Main {
 	}
 
 }
+
+//output
+/*
+Month : DEC
+Day : 25
+Christmas is in DEC 25
+*/
