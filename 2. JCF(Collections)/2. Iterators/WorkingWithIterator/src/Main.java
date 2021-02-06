@@ -51,7 +51,10 @@ public class Main {
  * 
  * it is possible to have several independent iterators traversing the same collection
  * 
- * The algorithm that determines each “next” element in the iterator’s path is an intrinsic
-property of the iterator itself. Moreover, it is possible to have several different iterator classes
-defined for the same collection class, each with its own traversal algorithms.
+ * The algorithm that determines each “next” element in the iterator’s path is an intrinsic property of the iterator itself.
+   Moreover, it is possible to have several different iterator classes
+	defined for the same collection class, each with its own traversal algorithms.
+ *The remove() method deletes the last element returned by the next() method. This means
+that next() must be called before each call to remove(), designating the element to be deleted
+
  */
