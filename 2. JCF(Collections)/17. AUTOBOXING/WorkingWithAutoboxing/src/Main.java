@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -17,7 +19,16 @@ public class Main {
 		numbers.remove(removed);
 		System.out.printf("Removed n: %d%n",removed);
 		System.out.println(numbers);
-		
+		System.out.println("****** Converting from primitve array to object array*****");
+		//Converting a primitive int array to an object Integer list
+		int[] input = {2,5,4,8,7,9,6,5,2,5};
+        Integer[] inputObject = new Integer[input.length];
+        for(int i=0;i<input.length;i++){
+            inputObject[i]=Integer.valueOf(input[i]);
+        }
+        Collection<Integer> numberss = new ArrayList<Integer>();
+        numberss.addAll(Arrays.asList(inputObject));
+        System.out.println(numberss);
 	}
 
 }
@@ -30,6 +41,8 @@ public class Main {
 	[22, 33, 55, 66]
 	Removed n: 66
 	[22, 33, 55]
+	****** Converting from primitve array to object array*****
+	[2, 5, 4, 8, 7, 9, 6, 5, 2, 5]
  */
 
 /*
