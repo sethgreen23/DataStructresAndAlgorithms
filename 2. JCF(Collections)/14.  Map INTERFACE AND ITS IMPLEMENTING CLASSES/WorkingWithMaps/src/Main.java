@@ -89,4 +89,12 @@ class Country{
 	The EnumMap class is defined like this:
 	public class EnumMap<K extends Enum<K>,V> extends AbstractMap<K,V>
 	The expression K extends Enum<K> means that only enum types can be used for the key type K.
+	
+	*The JCF implements four extensions of the AbstractMap class: the EnumMap class, the
+	HashMap class, the LinkedHashMap class, and the TreeMap class. Their distinctions are the same
+	as the distinctions among the corresponding four extensions of the AbstractSet class. The
+	HashMap class allows any class to be the key type. Its LinkedHashMap extension maintains a
+	doubly linked list of all its elements, allowing ordered key access according the order of insertion. 
+	The TreeMap class allows ordered key access according to either the key type’s natural
+	order or a Comparator object passed to its constructor.
  */
