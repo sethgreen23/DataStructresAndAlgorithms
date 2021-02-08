@@ -1,6 +1,7 @@
 import java.util.Collection;
 import java.util.EnumMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class Main {
 
@@ -14,6 +15,12 @@ public class Main {
 		Collection<Country> countries =nations.values();
 		for(Iterator<Country> iterator=countries.iterator();iterator.hasNext();) {
 			System.out.println(iterator.next());
+		}
+		//using entrySet
+		System.out.println("iterate throw the map using entryset");
+		for(Map.Entry<EuCode, Country> e: nations.entrySet()) {
+			System.out.print("Key: "+e.getKey());
+			System.out.println(" / Value: "+e.getValue());
 		}
 	}	
 }
