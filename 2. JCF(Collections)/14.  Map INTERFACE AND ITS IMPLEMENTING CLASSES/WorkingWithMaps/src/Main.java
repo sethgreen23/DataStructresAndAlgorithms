@@ -58,6 +58,10 @@ class Country{
 	Country [name=France, language=French, area=643801, population=66.99, age=40.4]
 	Country [name=Germany, language=German, area=357386, population=83.02, age=46.8]
 	Country [name=Poland, language=Polish, area=312679, population=37.97, age=42.2]
+	iterate throw the map using entryset
+	Key: FR / Value: Country [name=France, language=French, area=643801, population=66.99, age=40.4]
+	Key: GER / Value: Country [name=Germany, language=German, area=357386, population=83.02, age=46.8]
+	Key: POL / Value: Country [name=Poland, language=Polish, area=312679, population=37.97, age=42.2]
  */
 
 /*
