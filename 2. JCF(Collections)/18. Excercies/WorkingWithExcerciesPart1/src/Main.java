@@ -172,3 +172,42 @@ public class Main {
 		return sum;
 	}
 }
+
+/*
+	4.1 The Java Collections Framework is a group of interrelated interfaces and classes that support the creation and use of lists, sets, and iterators.
+	4.2 The four main types are List, Queue, Set, and Map.
+	4.3 A queue is a first-in-first-out collection that allows elements to be added at only one end (the back) and removed only from the other end (the front).
+	4.4 A deque is a double-ended queue that allows elements to be added and removed only from its two ends (the front and back).
+	4.5 A legacy class is a class that has been superseded by another class
+	4.6 The ArrayList, ArrayDeque, ArrayDeque, and HashMap classes are implemented with an array.
+	4.7 The LinkedList, PriorityQueue, TreeSet, and TreeMap classes are implemented with a linked structure (either a linked list or a tree).
+	4.8 The LinkedHashSet class and the LinkedHashMap class are implemented with a linked indexed structure.
+	4.9 An ArrayList object is an instance of the java.util.ArrayList class. As a member of the Java Collections Framework, 
+		it supports all the methods of the Collection interface. As an indexed structure, it provides direct access to its elements by their index numbers.
+	4.10 A LinkedList object is an instance of the java.util.LinkedList class. As a member of the Java Collections Framework, it supports all the methods of the Collection interface. As a linked
+		structure, it allows elements to be added and removed in constant time, independent of the size of the
+		list.
+	4.11 The Collection interface is a Java interface that specifies the 15 methods listed in Figure 4.2 on
+		page 71.
+	4.12 The four set-theoretic methods specified by the Collection interface are listed in Figure 4.2 on page
+		71: addAll() for unions, removeAll() for complements, retainAll() for intersections, and
+		containsAll() for testing the subset relation.
+	4.13 An iterator is an object that moves about on a collection, providing access to its elements.
+	4.14 An iterator can be used to traverse a collection with a for loop, in the same way that an index can be
+		used to traverse an array.
+	4.15 An array index provides direct access (i.e., random access) into an array. An iterator provides only
+		sequential access.
+	4.16 The java.util.Arrays class includes an asList() method that returns a List object whose elements are the same as those in the array passed to it. (See Example 4.15 on page 96.)
+	4.17 The java.util.Collections class includes an addAll() method that adds all elements that are
+		passed to it. (See Example 4.15 on page 96.) The method takes a variable number of arguments (i.e., it
+		is a varargs method).
+	4.18 A generic class is a class that uses generic type parameters, that is, parametrized types. (See page 96.)
+	4.19 A generic method is a method that uses generic type parameters, that is, parametrized types.
+	4.20 A generic type parameter is a symbol used in a class or method definition that represents a type. When
+		applied, an actual class or interface name must be substituted for the parameter.
+	4.21 A constrained generic type parameter is a generic type parameter that is constrained by an extends
+		clause.
+	4.22 A generic type argument is a class or interface name that is being substituted for a generic type parameter in a generic class or generic method.
+	4.23 The term “autoboxing” refers to the automatic implicit instantiation of a wrapper class thereby allowing the value of a fundamental type expression to be used where an object is expected, for example, in
+		the Collections.addAll() method. (See Example 4.16 on page 97.)
+ */
