@@ -45,6 +45,8 @@ public class Stack {
 	
 	//peek the to element of the stack
 	public Player peek() {
+		if(isEmpty())
+			throw new EmptyStackException();
 		return stack[top-1];
 	}
 	
