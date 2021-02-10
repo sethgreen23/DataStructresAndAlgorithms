@@ -31,7 +31,11 @@ public class Stack {
 		
 		Player popedPlayer = stack[--top];
 		stack[top]=null;
-		if((stack.length-top)>10) {
+		//imagine we have array with 10 items and we resize it to 20 and eventuatualy
+		//we resize the array to 40 then we poppd 30 items off the stack
+		//now our sized 40 array have 10 items then we check if there is alot of
+		//empty space we could consider resizing the array
+		if((stack.length-top)>(3*top)) {
 			Player[] newArray = new Player[top * 2];
 			System.arraycopy(stack, 0, newArray, 0, newArray.length);
 			stack = newArray;
