@@ -3,6 +3,7 @@ import java.util.EmptyStackException;
 public class Main {
 
 	public static void main(String[] args) {
+		//using parameterized constructor
 		ArrayStack<String> stack = new ArrayStack<String>(10);
 		System.out.println("isEmpty() :"+stack.isEmpty());
 		stack.push("Fr");
@@ -20,11 +21,12 @@ public class Main {
 		System.out.printf("Peek : %s%n",stack.peek());
 		System.out.println("isEmpty() :"+stack.isEmpty());
 		System.out.println("Size of the stack: "+stack.size());
-		System.out.println("Poping last element :"+stack.pop());
+		System.out.println("Poping top element :"+stack.pop());
 		stack.print();
 		System.out.printf("Peek : %s%n",stack.peek());
 		System.out.println("******************");
-		ArrayStack<Integer> stack1 = new ArrayStack<Integer>(5);
+		//using non unparameterized constructor
+		ArrayStack<Integer> stack1 = new ArrayStack<Integer>();
 		System.out.println("isEmpty() :"+stack1.isEmpty());
 		stack1.push(1);
 		stack1.push(2);
@@ -36,7 +38,7 @@ public class Main {
 		System.out.printf("Peek : %s%n",stack1.peek());
 		System.out.println("isEmpty() :"+stack1.isEmpty());
 		System.out.println("Size of the stack: "+stack1.size());
-		System.out.println("Poping last element :"+stack1.pop());
+		System.out.println("Poping top element :"+stack1.pop());
 		stack1.print();
 		System.out.printf("Peek : %s%n",stack1.peek());
 	}

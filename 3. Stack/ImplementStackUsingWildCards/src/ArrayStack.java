@@ -3,9 +3,13 @@ import java.util.EmptyStackException;
 public class ArrayStack<E> implements Stack{
 	private E[] stack;
 	int top = 0;
+	public static final int INITIAL_CAPACITY= 100;
 	public ArrayStack(int capacity) {
 		stack = (E[]) new Object[capacity];
 		
+	}
+	public ArrayStack() {
+		stack = (E[]) new Object[INITIAL_CAPACITY];
 	}
 	@Override
 	public E peek() {
