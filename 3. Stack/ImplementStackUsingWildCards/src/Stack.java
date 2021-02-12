@@ -1,6 +1,6 @@
 
 public interface Stack<E> {
-	public E peek();
+	E peek();
 	void push(E element);
 	E pop();
 	boolean isEmpty();
