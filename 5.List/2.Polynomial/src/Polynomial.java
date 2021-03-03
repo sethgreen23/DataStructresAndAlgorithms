@@ -56,6 +56,7 @@ public class Polynomial {
 		return this.list.isEmpty();
 	}
 	
+	/*
 	public String plus(Polynomial p) {
 		
 		if(isZero()) {
@@ -126,8 +127,53 @@ public class Polynomial {
 		}
 		return result.toString();
 	}
-
+*/
+	public Polynomial plus(Polynomial p) {
+		if(this.isZero()) {
+			return new Polynomial(p);
+		}else if(p.isZero()) {
+			return new Polynomial(this);
+		}
+		
+		Polynomial result = new Polynomial();
+		
+		ListIterator<Term> iterator = this.list.listIterator();
+		ListIterator<Term> iteratorP = p.list.listIterator();
+		
+		while(iterator.hasNext() && iteratorP.hasNext()) {
+			Term to = iterator.next();
+			Term tp = iteratorP.next();
+			
+			if(to.exp>tp.exp) {
+				result.list.add(new Term(tp));
+				iterator.previous();
+			}else if(to.exp<tp.exp) {
+				result.list.add(new Term(to));
+				iteratorP.previous();
+			}else if(to.exp==tp.exp) {
+				result.list.add(new Term(to.coef+tp.coef,to.exp));
+			}
+		}
+		
+		while(iterator.hasNext()) {
+			result.list.add(new Term(iterator.next()));
+		}
+		while(iteratorP.hasNext()) {
+			result.list.add(new Term(iteratorP.next()));
+		}
+		return result;
+	}
 	
-	
+	public String toString() {
+		if(this.isZero())
+			return String.valueOf(degree());
+		
+		ListIterator<Term> iterator = this.list.listIterator();
+		StringBuilder result = new StringBuilder();
+		while(iterator.hasNext()) {
+			result.append(iterator.next());
+		}
+		return result.toString();
+	}
 	
 }
