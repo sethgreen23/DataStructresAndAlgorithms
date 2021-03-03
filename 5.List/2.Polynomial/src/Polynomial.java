@@ -5,7 +5,8 @@ import java.util.ListIterator;
 
 public class Polynomial {
 
-	List<Term> list = new LinkedList<>();
+	//using composition here other the extending List class
+	private List<Term> list = new LinkedList<>();
 	public static final Polynomial ZERO = new Polynomial();
 	//this is for ZERO instantiation
 	private Polynomial() {
