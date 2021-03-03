@@ -12,7 +12,8 @@ public class Polynomial {
 	}
 	
 	public Polynomial(Term t) {
-		list.add(t);
+		if(t.coef!=0)
+			list.add(t);
 	}
 	
 	public Polynomial(double coef, int exp) {
