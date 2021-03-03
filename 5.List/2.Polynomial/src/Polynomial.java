@@ -25,7 +25,7 @@ public class Polynomial {
 	public Polynomial(Polynomial p) {
 		for(Term t : p.list) {
 			if(t.coef!=0) {
-				this.list.add(t);
+				this.list.add(new Term(t));
 			}
 		}
 	}
