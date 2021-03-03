@@ -60,35 +60,40 @@ public class Polynomial {
 	
 	
 	public Polynomial plus(Polynomial p) {
+		//if the implicit argument is zero
 		if(this.isZero()) {
 			return new Polynomial(p);
-		}else if(p.isZero()) {
+		}else if(p.isZero()) {//if the explicit argument is zero
 			return new Polynomial(this);
 		}
-		
+		//prepare a polynom that will hold the result polynom
 		Polynomial result = new Polynomial();
-		
+		//prepare the polynoms iterators
 		ListIterator<Term> iterator = this.list.listIterator();
 		ListIterator<Term> iteratorP = p.list.listIterator();
-		
+		//while we have still elements in both iterators
 		while(iterator.hasNext() && iteratorP.hasNext()) {
 			Term to = iterator.next();
 			Term tp = iteratorP.next();
 			
+			//if the implicit term exponenet is gretter the the explicit
+			//add the explicit and back the implicit iterator
 			if(to.exp>tp.exp) {
 				result.list.add(new Term(tp));
 				iterator.previous();
-			}else if(to.exp<tp.exp) {
+			}else if(to.exp<tp.exp) {//if the explicit term exponenet is gretter the the implicit
+									//add the implicit and back the explicit iterator
 				result.list.add(new Term(to));
 				iteratorP.previous();
-			}else if(to.exp==tp.exp) {
+			}else if(to.exp==tp.exp) {//if they are equal sum the two coeficent and and the shared exponenet
 				result.list.add(new Term(to.coef+tp.coef,to.exp));
 			}
 		}
-		
+		//make sure the implicit iterator has element still
 		while(iterator.hasNext()) {
 			result.list.add(new Term(iterator.next()));
 		}
+		//make sure the explicit iterator has elements still
 		while(iteratorP.hasNext()) {
 			result.list.add(new Term(iteratorP.next()));
 		}
@@ -96,18 +101,22 @@ public class Polynomial {
 	}
 	
 	public String toString() {
+		//if the polynom is zero then restun its degree "0"
 		if(this.isZero())
 			return String.valueOf(degree());
-		
-		ListIterator<Term> iterator = this.list.listIterator();
+		//prepare the singly linked iterator
+		Iterator<Term> iterator = this.list.iterator();
 		StringBuilder result = new StringBuilder();
 		boolean firstElement = true;
 		while(iterator.hasNext()) {
 			Term t = iterator.next();
+			//if we reach the first element
 			if(firstElement) {
 				result.append(String.format("%.2f", t.coef));
 				firstElement = false;
 			}else {
+				//if we are not on the first element
+				//check the display for the coeficient
 				if(t.coef>0) {
 					result.append(String.format(" + %.2f", t.coef));
 				}else {
@@ -115,6 +124,7 @@ public class Polynomial {
 				}	
 			}
 			int e = t.exp;
+			//check the display for the exponenet
 			if(e==0) {
 				result.append(String.format("",e ));
 			}else if(e==1) {
