@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
@@ -15,7 +16,10 @@ public class Main {
 		l.add(3.5);
 		l.add(true);
 //		print(l);
-		printReverse(l);
+//		printReverse(l);
+		System.out.println(l);
+		exchange(l,1,2);
+		System.out.println(l);
 	}
 
 //	7.1 Implement the following method:
@@ -49,5 +53,14 @@ public class Main {
 		while(iterator.hasPrevious()) {
 			System.out.println(iterator.previous());
 		}
+	}
+	
+//	7.4 Write the following method:
+//		public static void exchange(LinkedList list, int i, int j)
+//		// swaps the elements indexed at i and j
+	public static void exchange(LinkedList list, int i, int j) {
+		Object a = list.get(i);
+		list.set(i,list.get(j));
+		list.set(j,a);
 	}
 }
