@@ -7,11 +7,11 @@ public class Main {
 		double[] poly = new double[] {5,2,4,8};
 		Polynomial p = new Polynomial(poly);
 		System.out.println("p: "+p);
-		List<Term> l= new ArrayList<>();
-		l.add(new Term(2,0));
-		l.add(new Term(-8,2));
-		l.add(new Term(4,5));
-		l.add(new Term(7,7));
+		List<Integer> l= new ArrayList<>();
+		l.add(2);
+		l.add(-8);
+		l.add(4);
+		l.add(7);
 		Polynomial p1 = new Polynomial(l);
 		System.out.println("p1: "+p1);
 		System.out.println("p + p1 :"+p.plus(p1));

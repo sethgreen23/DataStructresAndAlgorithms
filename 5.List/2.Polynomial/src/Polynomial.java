@@ -45,10 +45,11 @@ public class Polynomial {
 			}
 		}
 	}
-	public Polynomial(List<Term> t) {
-		Iterator<Term> iterator = t.iterator();
+	public Polynomial(List<Integer> t) {
+		Iterator<Integer> iterator = t.iterator();
+		int i=0;
 		while(iterator.hasNext()) {
-			this.list.add(iterator.next());
+			this.list.add(new Term(iterator.next(),i++));
 			
 		}
 	}
@@ -174,6 +175,32 @@ public class Polynomial {
 			result.append(iterator.next());
 		}
 		return result.toString();
+	}
+	
+	//use Term class as static inside the polynomial class
+	public static class Term{
+		double coef;
+		int exp;
+		
+		Term(double coef, int exp){
+			if(coef == 0.0 || exp < 0)
+				throw new IllegalArgumentException();
+			this.coef = coef;
+			this.exp = exp;
+		}
+		Term(Term that){
+			this(that.coef,that.exp);
+		}
+		
+		public String toString() {
+			StringBuilder result = new StringBuilder();
+				if(coef<0) {
+					result.append(String.format(" - %.2f x^%d", -coef,exp));
+				}else if(coef>0) {
+					result.append(String.format(" + %.2f x^%d", coef,exp));
+				}
+				return result.toString();
+		}
 	}
 	
 }
