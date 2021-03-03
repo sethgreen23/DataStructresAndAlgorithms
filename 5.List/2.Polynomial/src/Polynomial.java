@@ -101,8 +101,27 @@ public class Polynomial {
 		
 		ListIterator<Term> iterator = this.list.listIterator();
 		StringBuilder result = new StringBuilder();
+		boolean firstElement = true;
 		while(iterator.hasNext()) {
-			result.append(iterator.next());
+			Term t = iterator.next();
+			if(firstElement) {
+				result.append(String.format("%.2f", t.coef));
+				firstElement = false;
+			}else {
+				if(t.coef>0) {
+					result.append(String.format(" + %.2f", t.coef));
+				}else {
+					result.append(String.format(" - %.2f", -t.coef));
+				}	
+			}
+			int e = t.exp;
+			if(e==0) {
+				result.append(String.format("",e ));
+			}else if(e==1) {
+				result.append(String.format("x", e));
+			}else if(e>1) {
+				result.append(String.format("x^%d",e));
+			}
 		}
 		return result.toString();
 	}
@@ -122,6 +141,7 @@ public class Polynomial {
 			this(that.coef,that.exp);
 		}
 		
+		/*
 		public String toString() {
 			StringBuilder result = new StringBuilder();
 				if(coef<0) {
@@ -131,6 +151,7 @@ public class Polynomial {
 				}
 				return result.toString();
 		}
+		*/
 	}
 	
 }

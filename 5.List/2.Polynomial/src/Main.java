@@ -14,21 +14,21 @@ public class Main {
 		l.add(7);
 		Polynomial p1 = new Polynomial(l);
 		System.out.println("p1: "+p1);
-		System.out.println("p + p1 :"+p.plus(p1));
+		System.out.println("p + p1 : "+p.plus(p1));
 		Polynomial p3=Polynomial.ZERO;
-		System.out.println("p3 :"+p3);
-		System.out.println("p + p3 :"+p.plus(p3));
-		System.out.println("p3 + p1 :"+p3.plus(p1));
+		System.out.println("p3 : "+p3);
+		System.out.println("p + p3 : "+p.plus(p3));
+		System.out.println("p3 + p1 : "+p3.plus(p1));
 	}
 
 }
 
 /*output*/
 /*
-p:  + 5,00 x^0 + 2,00 x^1 + 4,00 x^2 + 8,00 x^3
-p1:  + 2,00 x^0 - 8,00 x^1 + 4,00 x^2 + 7,00 x^3
-p + p1 : + 7,00 x^0 - 6,00 x^1 + 8,00 x^2 + 15,00 x^3
-p3 :-1
-p + p3 : + 5,00 x^0 + 2,00 x^1 + 4,00 x^2 + 8,00 x^3
-p3 + p1 : + 2,00 x^0 - 8,00 x^1 + 4,00 x^2 + 7,00 x^3
+p: 5,00 + 2,00x + 4,00x^2 + 8,00x^3
+p1: 2,00 - 8,00x + 4,00x^2 + 7,00x^3
+p + p1 : 7,00 - 6,00x + 8,00x^2 + 15,00x^3
+p3 : -1
+p + p3 : 5,00 + 2,00x + 4,00x^2 + 8,00x^3
+p3 + p1 : 2,00 - 8,00x + 4,00x^2 + 7,00x^3
  */
