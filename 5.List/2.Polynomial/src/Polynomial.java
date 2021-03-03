@@ -57,78 +57,7 @@ public class Polynomial {
 		return this.list.isEmpty();
 	}
 	
-	/*
-	public String plus(Polynomial p) {
-		
-		if(isZero()) {
-			if(p.isZero()) {
-				//if the two polynomes are zeroes
-				return "";
-			}else {
-				//if the explicite argement is not zero and the implecite one is zero
-				return p.print();
-			}
-		}else {
-			
-			if(p.isZero()) {
-				//if the implicite one is not zero and the explicite one is zero
-				return this.print();
-			}else {
-				//if the implicite one is not zero and the explicite one is not zero
-				return this.print(p);
-			}
-		}
-	}
 	
-	private String print(Polynomial p) {
-		//prepare the string builder to get results
-		StringBuilder result = new StringBuilder();
-		//prepare the iterator to parse the lists of the lists of polynomials
-		ListIterator<Term> iteratorP = p.list.listIterator();
-		ListIterator<Term> iterator = this.list.listIterator();
-		//we parse the polynomials till one of the has no elements
-		while(iterator.hasNext() && iteratorP.hasNext()) {
-			Term to = iterator.next();
-			Term tp = iteratorP.next();
-			// if the exponent of the current implicit term is greater the the one of the explicit one
-			//we append the one of explicit term with least exponent and we previous the iterator of the implicit iterator
-			if(to.exp>tp.exp) {
-				result.append(tp);
-				iterator.previous();
-				// if the exponent of the current explicit term is greater the the one of the implicit term
-				//we append the one of implicit term with least exponent and we previous the iterator of the explicit iterator
-			}else if(to.exp<tp.exp) {
-				result.append(to);
-				iteratorP.previous();
-			}else if(to.exp == tp.exp) {
-				//if the exponent are equal for boths then we add the coefficients and we put the shared exponent
-				Term t = new Term(to.coef+tp.coef,to.exp);
-				result.append(t);
-			}
-		}
-		
-		//here we make sure that the implicit polynomial has extra terms
-		while(iterator.hasNext()) {
-			result.append(iterator.next());
-		}
-		//here we make sure that the explicit polynomial has extra terms
-		while(iteratorP.hasNext()) {
-			result.append(iteratorP.next());
-		}
-		return result.toString();
-		
-		
-	}
-	public String print() {
-		Iterator<Term> iterator = this.list.iterator();
-		StringBuilder result = new StringBuilder();
-		while(iterator.hasNext()) {
-			Term t = iterator.next();
-			result.append(t);
-		}
-		return result.toString();
-	}
-*/
 	public Polynomial plus(Polynomial p) {
 		if(this.isZero()) {
 			return new Polynomial(p);
