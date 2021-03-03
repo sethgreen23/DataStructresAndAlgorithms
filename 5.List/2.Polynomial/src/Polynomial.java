@@ -53,7 +53,7 @@ public class Polynomial {
 		}
 	}
 	public boolean isZero() {
-		return this.equals(ZERO);
+		return this.list.isEmpty();
 	}
 	
 	public String plus(Polynomial p) {
@@ -129,29 +129,5 @@ public class Polynomial {
 
 	
 	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((list == null) ? 0 : list.hashCode());
-		return result;
-	}
 	
-	//we compare there lists emptiness
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Polynomial other = (Polynomial) obj;
-		if (list == null) {
-			if (other.list != null)
-				return false;
-		} else if (!list.equals(other.list))
-			return false;
-		return true;
-	}
 }
