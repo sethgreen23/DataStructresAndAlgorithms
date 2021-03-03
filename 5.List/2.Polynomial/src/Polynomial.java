@@ -29,6 +29,13 @@ public class Polynomial {
 			}
 		}
 	}
+	public int degree() {
+		if(list.isEmpty()) {
+			return -1;
+		}else {
+			return list.get(list.size()-1).exp;
+		}
+	}
 	
 	public Polynomial(double[]a) { //we can use Polynomial(double ... a) same thing with quite a little difference because the second one accept empty array
 		for(int i=0;i<a.length;i++) {
