@@ -13,6 +13,7 @@ public class Concordance {
 	private static Set<String> words = new TreeSet<>();
 	
 	public Concordance(String source, String filter) {
+		//reading and storing the filter strings
 		File filterFile=null ;
 		File sourceFile=null;
 		Scanner input=null;
@@ -40,6 +41,8 @@ public class Concordance {
 //				System.out.println(Arrays.toString(line));
 				for(int i=0;i<line.length;i++) {
 					String listing = line[i].toUpperCase();
+					//we filter out the element that we grab from the source file
+					//the one that are included in the filter file we dont include them in the destination file
 					if(words.contains(listing))
 						continue;
 					String exist = map.get(listing);
@@ -63,6 +66,7 @@ public class Concordance {
 	}
 	
 	public void printInFile(String destination) {
+		//writing the element from the map to destination file
 		PrintWriter write = null;
 		try {
 			File destinationFile = new File(destination);
