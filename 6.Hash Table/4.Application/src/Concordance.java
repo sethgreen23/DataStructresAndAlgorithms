@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class Concordance {
 	/*
@@ -12,8 +13,8 @@ public class Concordance {
 	 But it is still a map with key/value entries. As a binary search tree structure, it sacrifices its O(1)
 	access time, but its keys are ordered.
 	 */
-	private  Map<String,String> map = new HashMap<String,String>();
-	
+//	private  Map<String,String> map = new HashMap<String,String>();
+	private Map<String,String> map = new TreeMap<String,String>();
 	public Concordance(String file) {
 		// get the file to be read
 		//get everyline in the file
