@@ -31,6 +31,7 @@ public class Concordance {
 				}
 			}
 //			System.out.println(map);
+			
 			System.out.println("the file is mapped to the map!");
 		}catch(FileNotFoundException e) {
 			e.printStackTrace();
